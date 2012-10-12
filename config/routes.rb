@@ -1,4 +1,6 @@
 Givingbank::Application.routes.draw do
+  resources :charities
+
   resources :users
 
   # The priority is based upon order of creation:

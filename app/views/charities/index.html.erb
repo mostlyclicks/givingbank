@@ -1,0 +1,10 @@
+<h1>Charities</h1>
+<ul>
+<% @charities.each do |charity| %>
+	<li>
+		<h2><%= charity.name %></h2>
+		<p><%= charity.description %></p>
+		<%= image_tag charity.image_url %>
+	</li>
+<% end %>
+</ul>
