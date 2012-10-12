@@ -1,5 +1,7 @@
 Givingbank::Application.routes.draw do
-  resources :charities
+  resources :charities do
+    member { post :vote }
+  end
 
   resources :users
 

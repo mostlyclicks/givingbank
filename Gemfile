@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 
 gem 'pg'
 gem 'heroku'
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 
 # Gems used only for assets and not required

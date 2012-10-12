@@ -3,8 +3,13 @@
 <% @charities.each do |charity| %>
 	<li>
 		<h2><%= charity.name %></h2>
-		<p><%= charity.description %></p>
+		<p><%= charity.description %><br />
+			<%= link_to "vote", vote_charity_path(charity, type: "up"), method: "post" %> | 
+			<%= link_to "unvote", vote_charity_path(charity, type: "down"), method: "post" %> | 
+			Votes: <%= charity.reputation_for(:votes).to_i %>
+			<%#= pluralize charity.reputation_value(:votes).to_i, "vote" %></p>
 		<%= image_tag charity.image_url %>
+
 	</li>
 <% end %>
 </ul>
