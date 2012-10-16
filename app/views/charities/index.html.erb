@@ -4,9 +4,14 @@
 	<li>
 		<h2><%= charity.name %></h2>
 		<p><%= charity.description %><br />
-			<%= link_to "vote", vote_charity_path(charity, type: "up"), method: "post" %> | 
-			<%= link_to "unvote", vote_charity_path(charity, type: "down"), method: "post" %> | 
+		<%# if @votes < 3 %>
+			<%= link_to "vote", vote_charity_path(charity, type: "up"), method: "post" %>
+		 <%# else %>
+		 	<%#= "Vote limit" %>
+		 <%# end %>
+		 | <%= link_to "unvote", vote_charity_path(charity, type: "down"), method: "post" %> | 
 			Votes: <%= charity.reputation_for(:votes).to_i %>
+
 			<%#= pluralize charity.reputation_value(:votes).to_i, "vote" %></p>
 		<%= image_tag charity.image_url %>
 
