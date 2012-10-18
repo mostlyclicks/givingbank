@@ -1,7 +1,5 @@
 class CharitiesController < ApplicationController
 
-
-
 	def index
 		@charities = Charity.all
 	end
@@ -11,11 +9,18 @@ class CharitiesController < ApplicationController
 		value = params[:type] == "up" ? 1 : -1
 		@charity = Charity.find(params[:id])
 		@charity.increase_evaluation(:votes, value, current_user)
-		
 		redirect_to :back, notice: "Thank you for voting"
 	end
 
+	def vote_limit?
+		
+	end
 	
+
+
+
+end
+
 
 	#def check_day(value, current_user)
 	#	current_day = Time.now
@@ -29,8 +34,6 @@ class CharitiesController < ApplicationController
 	#	end
 #
 	#end
-
-end
 
 
 	#def vote_limit(value, current_user)
